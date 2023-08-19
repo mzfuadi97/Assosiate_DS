@@ -46,6 +46,8 @@ Keterangan kolom data :
 | Age | Usia pasien |
 | Outcome | Variabel Kelas penderita diabetes atau tidak: 1 = penderita diabetes 0 = bukan penderita diabetes |
 
+
+
 ![Describe-Data](https://github.com/mzfuadi97/Assosiate_DS/assets/70827786/246bf312-307a-4d0c-a386-ac274d9c23f5)
 
 Gambar 1. Distribusi Data
