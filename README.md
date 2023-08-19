@@ -6,7 +6,7 @@ Dokter ADS-C ingin melakukan prediksi berdasarkan pengukuran diagnostik apakah s
 
 > Dataset yang digunakan adalah Pima Indians Diabetes Database yang merupakan data dari  the National Institute of Diabetes and Digestive and Kidney Diseases.
 Sumber data tersebut didapatkan dari data publik yang dapat diunduh melalui Data World dengan link berikut: 
-https://data.world/data-society/pima-indians-diabetes-database 
+(rahasia)
 
 ## Business Understanding
 ### - Problem Statement
@@ -48,6 +48,8 @@ Keterangan kolom data :
 1 = penderita diabetes
 0 = bukan penderita diabetes |
 
+![Describe-Data](https://github.com/mzfuadi97/Assosiate_DS/assets/70827786/246bf312-307a-4d0c-a386-ac274d9c23f5)
+
 Gambar 1. Distribusi Data
 
 Pada gambar 1. Terdapat missing value, outlier, beberapa baris memiliki nilai yang sama, sehingga akan dilakukan :
@@ -63,10 +65,14 @@ Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dil
 - Pembagian dataset training dan dataset testing yaitu 80% banding 20% untuk mempercepat proses mesin belajar dan evaluasi model.
 
 Correlation Matrix
-Gambar 4. Heatmap dataset churn
+![Correlation Matriks- No](https://github.com/mzfuadi97/Assosiate_DS/assets/70827786/4712a150-da77-4a36-a83a-cf75828a3648)
+Gambar 2. Heatmap dataset diabetes
 
 > Terlihat pada feature “no” memiliki nilai korelasi terhadap nilai label sebesar 0,038, sehingga drop feature “no” tersebut. Namun beberapa memiliki korelasi negatif, artinya jika glokosa tinggi maka kemungkinan tidak memiliki penyakit diabetes.
 > Dipilih feature predictor yang tidak mendekati 0, sehingga feature yang digunakan yaitu : Pregnant, Glucose, Bloodpredcit, SkinThic, Insulin, BMI, DiabetesDiagree, dan Age
+
+![Result-Normalization](https://github.com/mzfuadi97/Assosiate_DS/assets/70827786/bef9b097-fa6c-4921-9860-149838189353)
+Gambar 3. Hasil Normalisasi
 
 ## Data Modelling
 
@@ -78,21 +84,23 @@ Model menggunakan RandomForest, serta Tree Decision karena dilakukan cross valid
 > Setelah melakukan cross validation, Optimasi parameter model algoritma, mengasumsikan metode “cross validation” untuk meningkatan akurasi model, namun ketika uji coba, hasil outputnya menurunkan peforma model, sehingga cross validation hanya menjadi uji coba saja. Selain itu, dilakukan untuk menentukan parameter-parameter model untuk mendapatkan peforma terbaik. Salah satu cara yaitu melakukan hyperparameter tuning untuk mendapatk parameter-parameter model yang optimal.
 
 
-
-
 ## Evaluation
 
 Pada hasil evaluasi memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
 
 
-
 - DecisionTree :  membuat keputusan berdasarkan serangkaian aturan dan pertanyaan (tree) yang digunakan untuk memprediksi target variabel, memprediksi tentang pelanggan yang akan beralih dengan menguji aturan berdasarkan fitur-fitur yang diberikan.
 - RandomForest : mirip dengan Decision Tree, namun beroperasi dengan menggabungkan beberapa decision tree, mirip dengan Decision Tree, namun beroperasi dengan menggabungkan beberapa decision tree.
 
-Pada Gambar 5. Model Random Forest dan DT memiliki akurasi yang cukup tinggi yaitu 0.82. Namun, jika diperhatikan juga nilai standard deviation (std), model DT memiliki nilai akurasi yang lebih rendah yaitu 0.77 dibandingkan dengan model Random Forest yang memiliki nilai std 0.82. Nilai std yang lebih rendah menunjukkan bahwa model DT memiliki stabilitas performa yang lebih baik ketika diuji dengan data yang berbeda-beda, sehingga dapat dipertimbangkan sebagai model terbaik. Sehingga pada model algoritma yang digunakan pada permasalahan diabetes classification ini menggunakan RandomForest.
+![perform RF](https://github.com/mzfuadi97/Assosiate_DS/assets/70827786/212c5cb8-1bbe-44b7-b619-030b6c4ce7c9)
+Gambar 4. Confussion Matriks menggunakan Random Forest
 
+![perform DT](https://github.com/mzfuadi97/Assosiate_DS/assets/70827786/9f40877e-d7bf-42bc-903a-d916308aa98f)
+Gambar 5. Confussion Matriks menggunakan Decision Tree
 
+Pada Gambar 4. Model Random Forest dan DT memiliki akurasi yang cukup tinggi yaitu 0.82. Namun, jika diperhatikan juga nilai standard deviation (std), model DT memiliki nilai akurasi yang lebih rendah yaitu 0.77 dibandingkan dengan model Random Forest yang memiliki nilai std 0.82. Nilai std yang lebih rendah menunjukkan bahwa model DT memiliki stabilitas performa yang lebih baik ketika diuji dengan data yang berbeda-beda, sehingga dapat dipertimbangkan sebagai model terbaik. Sehingga pada model algoritma yang digunakan pada permasalahan diabetes classification ini menggunakan RandomForest.
 
+![perform RF](https://github.com/mzfuadi97/Assosiate_DS/assets/70827786/8e62d8a7-0b59-4b42-b2fd-cbf8fb1f3bba)
 Gambar 6. Confussion Matrix
 
 Pada Gambar 6. dapat dilihat :
